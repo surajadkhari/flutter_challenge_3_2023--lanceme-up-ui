@@ -1,16 +1,10 @@
 # lancemeup_workspace_ui
 
-A new Flutter project.
+Task 1: UI Clone
+https://www.figma.com/file/Cl0Ahqp4CXNU5dZLb10b6D/Untitled?node-id=0%3A1&t=jbD2hbtix6322sJz-0
 
-## Getting Started
+UI:
 
-This project is a starting point for a Flutter application.
+https://user-images.githubusercontent.com/48079501/222669197-a0e4d3fb-fc99-495e-9c35-08e12b827ec9.mp4
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
