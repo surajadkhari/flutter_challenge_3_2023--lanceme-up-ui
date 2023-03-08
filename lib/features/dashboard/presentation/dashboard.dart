@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lancemeup_workspace_ui/common/constant/app_icons.dart';
+import 'package:lancemeup_workspace_ui/features/dashboard/presentation/widgets/features_section.dart';
 import 'package:lancemeup_workspace_ui/features/dashboard/presentation/widgets/work_card.dart';
 import '../../../common/constant/app_color_constant.dart';
 import '../data/models/projects_model/project_model.dart';
-import 'widgets/features_section.dart';
 import 'widgets/workspace_dropdown_widget.dart';
 
 class DashBoard extends StatelessWidget {

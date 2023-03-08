@@ -1,3 +1,4 @@
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -27,7 +28,16 @@ class MainPage extends ConsumerWidget {
       resizeToAvoidBottomInset: false,
       bottomNavigationBar: BottomNavigation(pageIndex: navIndex),
       backgroundColor: AppColorResources.appPrimaryColor,
-      body: pages[navIndex],
+      // body: pages[navIndex],
+      body: PageTransitionSwitcher(
+        transitionBuilder: (child, primaryAnimation, secondaryAnimation) =>
+            FadeThroughTransition(
+          animation: primaryAnimation,
+          secondaryAnimation: secondaryAnimation,
+          child: child,
+        ),
+        child: pages[navIndex],
+      ),
     ));
   }
 }

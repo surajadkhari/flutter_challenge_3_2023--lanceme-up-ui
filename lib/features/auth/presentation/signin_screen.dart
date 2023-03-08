@@ -1,11 +1,14 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:lancemeup_workspace_ui/common/constant/app_color_constant.dart';
-import 'package:lancemeup_workspace_ui/entry_screen.dart';
 import 'package:lancemeup_workspace_ui/utils/form_validation/form_validation_extension.dart';
 import '../../../common/constant/app_contant.dart';
+import '../../../core/api_const.dart/api_const.dart';
+import '../../../entry_screen.dart';
 import '../../../utils/cust_textform_field.dart/custome_textform_field.dart';
 import '../../../utils/custom_navigation/app_nav.dart';
+import '../../dashboard/data/models/post_model/post_model.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -170,6 +173,53 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   fixedSize: Size(screenW, screenH * 0.058),
                 ),
                 onPressed: () async {
+                  Dio dio = Dio(BaseOptions(
+                    baseUrl: ApiConstant.kbaseUrl,
+                    headers: {
+                      'Content-Type': 'application/json',
+                      "Accept": 'application/json',
+                    },
+                  ));
+                  PostRequestModel postRequestModel = PostRequestModel(
+                      body: emailController.text,
+                      title: passwordController.text);
+
+                  // try {
+                  //   // Make the HTTP request using Dio
+                  //   final result = await dio.put(
+                  //     "${ApiConstant.kpost}/1",
+                  //     data: postRequestModel.toMap(),
+                  //   );
+                  //   print(result);
+                  //   // Handle the successful response
+                  //   // ...
+                  // } catch (error) {
+                  //   // Handle the DioError
+                  //   if (error is DioError) {
+                  //     log(error.message!.toString());
+                  //     if (error.type == DioErrorType.badResponse) {
+                  //       // The server responded with an error status code
+                  //       final statusCode = error.response?.statusCode;
+                  //       final message = error.response?.data['message'] ??
+                  //           'Something went wrong';
+                  //       print('Server error $statusCode: $message');
+                  //     } else if (error.type == DioErrorType.badCertificate ||
+                  //         error.type == DioErrorType.receiveTimeout ||
+                  //         error.type == DioErrorType.sendTimeout) {
+                  //       // A timeout occurred
+                  //       print('Request timed out');
+                  //     } else if (error.type == DioErrorType.cancel) {
+                  //       // The request was cancelled
+                  //       print('Request was cancelled');
+                  //     } else {
+                  //       // Some other type of DioError occurred
+                  //       print('DioError occurred: $error');
+                  //     }
+                  //   } else {
+                  //     // A non-DioError exception occurred
+                  //     print('Exception occurred: $error');
+                  //   }
+                  // }
                   normalNav(context: context, screen: const MainPage());
                   setState(() {
                     isLoading = true;
